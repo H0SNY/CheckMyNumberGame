@@ -12,6 +12,8 @@ let checkAction = () => {
   { // if input is a number
     if(inputValue === random) //if right answer
     {
+      myNumberC.style.backgroundColor = "#7abd33";
+      document.querySelector('body').style.backgroundColor = "#7abd33";
       myNumber.textContent = String(inputValue);
       let tempScore = Number(score.textContent);
       tempScore--;
@@ -40,9 +42,13 @@ let startAgain = () => {
   score.textContent = "20";
   myNumber.textContent = "";
   random = getRandomNumber();
+  document.querySelector("body").style.backgroundColor = '#383d41';
 };
+
+
 let random = getRandomNumber();
 let myNumber = document.querySelector('#mynumber');
+let myNumberC = document.querySelector('#mynumberC');
 let checkButton = document.querySelector('#checkbutton');
 let againButton = document.querySelector('#againC');
 let input = document.querySelector('#input');
@@ -55,3 +61,5 @@ checkAction()});
 againButton.addEventListener('click' , function (){
   startAgain();
 });
+
+

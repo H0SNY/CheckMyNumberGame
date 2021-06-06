@@ -1,6 +1,6 @@
 
 body {
-  background-color : #7abd33 !important;
+  background-color:#383d41;
   font-family: 'ZCOOL KuaiLe', cursive !important;
 
 }
@@ -31,7 +31,7 @@ body {
 
 
 #mynumberC{
-  background-color: white;
+  background-color: black;
   height: 100px;
   border : 2px solid;
   border-radius: 10px;
@@ -45,7 +45,7 @@ body {
   color: white;
   height: 80px;
   width: 100px;
-  background-color: #7abd33;
+  background-color: black;
   margin-bottom: 20px;
  border : 2px solid white;
   border-radius: 10px;
