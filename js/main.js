@@ -1,8 +1,10 @@
 "use strict";
 //generates random number from 1 > 20
 let getRandomNumber = () => Math.floor(Math.random() * 20 + 1);
+let lost = false;
 let checkAction = () => {
   let inputValue = Number(input.value);
+
   if(!inputValue || inputValue > 20 || inputValue < 1)//if input is not a number or > 20 or < 1
   {
       output.textContent = "Enter Valid Number"
@@ -10,7 +12,8 @@ let checkAction = () => {
   }
   else
   { // if input is a number
-    if(inputValue === random) //if right answer
+
+     if(inputValue === random) //if right answer
     {
       myNumberC.style.backgroundColor = "#7abd33";
       document.querySelector('body').style.backgroundColor = "#7abd33";
@@ -27,6 +30,13 @@ let checkAction = () => {
     }
     else //if wrong answer
     {
+      if(score.textContent == "0")
+      {
+        lost = true;
+        startAgain();
+        return;
+      }
+
       if(inputValue > random) output.textContent = "Too High";
       else output.textContent = "Too Low";
       let tempScore = Number(score.textContent);
@@ -38,11 +48,20 @@ let checkAction = () => {
 }
 
 let startAgain = () => {
+  if(lost)
+  {
+    lost = false;
+    output.textContent = "You Lost Press Again To Restart";
+    document.querySelector('body').style.backgroundColor = "black";
+    score.textContent = "";
+    return;
+  }
+
   output.textContent = "Try A Number";
   score.textContent = "20";
   myNumber.textContent = "";
   random = getRandomNumber();
-  document.querySelector("body").style.backgroundColor = '#383d41';
+  document.querySelector("body").style.backgroundColor = '#5ad4ec';
 };
 
 
@@ -57,9 +76,10 @@ let score =  document.querySelector('#scorevalue');
 let highScore =  document.querySelector('#highscorevalue');
 checkButton.addEventListener('click' , function (){
 checkAction()});
-
 againButton.addEventListener('click' , function (){
   startAgain();
 });
+
+
 
 

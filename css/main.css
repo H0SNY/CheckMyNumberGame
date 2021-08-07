@@ -1,6 +1,6 @@
 
 body {
-  background-color:#383d41;
+  background-color: #5ad4ec;
   font-family: 'ZCOOL KuaiLe', cursive !important;
 
 }
@@ -68,22 +68,32 @@ body {
 #outputC p{
   color: white;
 }
+#output
+{
+  text-align: center;
+}
 #outputC{
   position: relative;
 }
 #scorevalue {
   position: absolute;
-  bottom: 75px;
+  bottom: 62px;
   left: 100px;
+
 }
 #highscorevalue{
   position: absolute;
-  bottom: 35px;
+  bottom: 16px ;
   left: 120px;
 
 }
 
 
+#outputC p{
+  background-color: #2f3e33;
+  border: solid #2f3e33;
+  border-radius: 10px;
+}
 
 
 
